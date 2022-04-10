@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        docker build -t gauge-taiko .
+        docker build -t gauge-taiko . && \
         docker run  --rm -it -v ${PWD}/reports:/gauge/reports gauge-taiko
