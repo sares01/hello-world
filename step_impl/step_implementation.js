@@ -68,7 +68,7 @@ step("Open todo application", async function () {
 
 step("Must not have <table>", async function (table) {
     for (var row of table.rows) {
-        assert.ok(!await text(row.cells[0]).exists(0, 0));
+        assert.ok(!await text(row.cells[0]).exists(10, 0));
     }
 });
 
