@@ -64,7 +64,7 @@ step("Clear all tasks", async function () {
 
 step("Open todo application", async function () {
     await goto("todo.taiko.dev");
-    click("Salar")
+    await click("Taras")
 });
 
 step("Must not have <table>", async function (table) {
