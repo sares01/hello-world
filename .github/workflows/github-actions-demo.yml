@@ -3,10 +3,11 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    env: 
+        DATENTORBO_APP_SECRETS: ${{ secrets.APP_S }}
     steps:
       - uses: actions/checkout@v2
       - run: docker build -t gauge-taiko .
-      - run: docker run --name testE -e TZ=Europe/Berlin gauge-taiko
+      - run: docker run --name testE -e APP_S=$APP_S -e TZ=Europe/Berlin gauge-taiko
       - run: docker cp testE:/gauge/reports/html-report ./test 
       - run: ls -al ./test/html-report
-
