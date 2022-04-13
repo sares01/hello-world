@@ -4,7 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     env: 
-        DATENTORBO_APP_SECRETS: ${{ secrets.APP_S }}
+        APP_S: ${{ secrets.APP_S }}
     steps:
       - uses: actions/checkout@v2
       - run: docker build -t gauge-taiko .
